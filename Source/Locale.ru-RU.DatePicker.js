@@ -12,5 +12,8 @@ provides: Locale.ru-RU.DatePicker
 Locale.define('ru-RU', 'DatePicker', {
 	select_a_time: 'Выберите время',
 	use_mouse_wheel: 'Используйте колесо мышки для быстрой смены значения',
-	time_confirm_button: 'OK'
+	time_confirm_button: 'OK',
+	apply_range: 'Применить',
+	cancel: 'Отменить',
+	week: 'Н-ля'
 });

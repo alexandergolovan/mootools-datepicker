@@ -5,7 +5,8 @@
 	<title>Date Range Picker</title>
 	<script src="mootools-core.js" type="text/javascript"></script>
 	<script src="mootools-more.js" type="text/javascript"></script>
-	<script src="../Source/Locale.en-US.DatePicker.js" type="text/javascript"></script>
+	<script src="../Source/Locale.ru-RU.DatePicker.js" type="text/javascript"></script>
+	<script src="Locale.ru-RU.Date.js" type="text/javascript"></script>
 	<script src="../Source/Picker.js" type="text/javascript"></script>
 	<script src="../Source/Picker.Attach.js" type="text/javascript"></script>
 	<script src="../Source/Picker.Date.js" type="text/javascript"></script>
@@ -22,9 +23,9 @@
 
 	<p>
 		Inputs:<br>
-		<input type="text" value="02/08/1991 - 02/20/1991"><br />
-		<input type="text" value="02/08/1991"><br />
-		<input type="text" />
+		<input type="text" value="02/08/2016 - 02/20/2016"><br />
+		<!--<input type="text" value="02/08/1991"><br />
+		<input type="text" />-->
 	</p>
 
 	<p>
@@ -34,13 +35,24 @@
 
 	<script>
 
+		Locale.use('ru-RU');
 	var picker = new Picker.Date.Range($$('input[type="text"]'), {
 		timePicker: false,
-		columns: 3,
-		positionOffset: {x: 5, y: 0}
+		columns: 2,
+		positionOffset: {x: 5, y: 0},
+		onOpen: function () {
+			console.log('open');
+		},
+		onClose: function () {
+			console.log('close');
+		}
+
+		/*footer: false*/
 	});
 
-	var picker2 = new Picker.Date.Range('range_hidden', {
+
+
+	/*var picker2 = new Picker.Date.Range('range_hidden', {
 		toggle: $$('#range_select'),
 		columns: 3,
 		onSelect: function(){
@@ -48,7 +60,7 @@
 				return date.format('%e %B %Y');
 			}).join(' - '))
 		}
-	});
+	});*/
 
 	</script>
 

@@ -88,10 +88,14 @@ Picker.Date.Range = new Class({
 	},
 
 	select: function(date){
-		if (this.startDate && (this.endDate == this.startDate || date > this.endDate) && date >= this.startDate) this.endDate = date;
-		else {
+		if (this.startDate && (this.endDate == this.startDate || date > this.endDate) && date >= this.startDate) {
+			this.endDate = date;
+			//this.selectRange();
+		} else {
+			this.options.maxDate = new Date();
 			this.startDate = date;
 			this.endDate = date;
+
 		}
 		this.updateRangeSelection();
 	},

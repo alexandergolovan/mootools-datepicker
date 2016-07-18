@@ -37,7 +37,7 @@ this.DatePicker = Picker.Date = new Class({
 
 		startView: 'days', // allowed values: {time, days, months, years}
 		openLastView: false,
-		pickOnly: false, // 'years', 'months', 'days', 'time'
+		pickOnly: 'days', // 'years', 'months', 'days', 'time'  (false by default)
 		canAlwaysGoUp: ['months', 'days'],
 		updateAll : false, //whether or not to update all inputs when selecting a date
 
@@ -327,6 +327,7 @@ this.DatePicker = Picker.Date = new Class({
 		}.bind(this));
 
 		var canGoUp = options.pickOnly != 'days' || options.canAlwaysGoUp.contains('days');
+		console.log('options: ', options);
 		var titleEvent = (canGoUp) ? function(){
 			this.renderMonths(date, 'fade');
 		}.bind(this) : null;
