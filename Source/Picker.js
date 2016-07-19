@@ -193,7 +193,7 @@ var Picker = new Class({
 
 			x = (where == 'left') ? elementCoords.left - pickersize.x
 				: (where == 'bottom' || where == 'top') ? elementCoords.left
-				: elementCoords.right
+				: elementCoords.right;
 			y = (where == 'bottom') ? elementCoords.bottom
 				: (where == 'top') ? elementCoords.top - pickersize.y
 				: elementCoords.top;

@@ -90,12 +90,9 @@ Picker.Date.Range = new Class({
 	select: function(date){
 		if (this.startDate && (this.endDate == this.startDate || date > this.endDate) && date >= this.startDate) {
 			this.endDate = date;
-			//this.selectRange();
 		} else {
-			this.options.maxDate = new Date();
 			this.startDate = date;
 			this.endDate = date;
-
 		}
 		this.updateRangeSelection();
 	},
@@ -120,7 +117,17 @@ Picker.Date.Range = new Class({
 
 		if (this.dateElements) for (var i = this.dateElements.length; i--;){
 			var el = this.dateElements[i];
-			if (el.time >= start && el.time <= end) el.element.addClass('selected');
+
+			// fixing the bug with non selected dates when minDate option
+			var elementDate = new Date(el.time),
+				startDate = new Date(start),
+				endDate = new Date(end);
+
+			elementDate.setHours(0,0,0,0);
+			startDate.setHours(0,0,0,0);
+			endDate.setHours(0,0,0,0);
+
+			if (elementDate >= startDate && elementDate <= endDate) el.element.addClass('selected');
 			else el.element.removeClass('selected');
 		}
 

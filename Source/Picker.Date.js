@@ -330,7 +330,6 @@ this.DatePicker = Picker.Date = new Class({
 
 		/*Todo:refactor canGoUp*/
 		var canGoUp = options.monthPicker && (options.pickOnly != 'days' || options.canAlwaysGoUp.contains('days'));
-		console.log('canGoUp: ', canGoUp);
 		var titleEvent = (canGoUp) ? function(){
 			this.renderMonths(date, 'fade');
 		}.bind(this) : null;
@@ -522,6 +521,9 @@ var renderers = {
 			if (date.get('month') != month) classes += '.otherMonth';
 			element = new Element('td' + classes, {text: date.getDate(), role: 'gridcell'}).inject(weekcontainer, where);
 
+			/*var additionalElement = new Element('span', {text: '%'});
+			element.adopt(additionalElement);*/
+
 			if (dateString == currentString) element.addClass('selected').set('aria-selected', 'true');
 			else element.set('aria-selected', 'false');
 
@@ -614,7 +616,7 @@ Picker.Date.defineRenderer = function(name, fn){
 
 Picker.Date.getRenderer = function(name) {
 	return renderers[name];
-}
+};
 
 var limitDate = function(date, min, max){
 	if (min && date < min) return min;

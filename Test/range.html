@@ -23,7 +23,7 @@
 
 	<p>
 		Inputs:<br>
-		<input type="text" value="02/08/2016 - 02/20/2016"><br />
+		<input type="text" value=""><br />
 		<!--<input type="text" value="02/08/1991"><br />
 		<input type="text" />-->
 	</p>
@@ -37,21 +37,25 @@
 
 		Locale.use('ru-RU');
 	var picker = new Picker.Date.Range($$('input[type="text"]'), {
-		timePicker: false,
 		columns: 2,
-		positionOffset: {x: 5, y: 0},
+		positionOffset: {x: 0, y: 5},
 		yearPicker: false,
 		monthPicker: false,
+		timePicker: false,
 		onOpen: function () {
 			console.log('open');
 		},
 		onClose: function () {
 			console.log('close');
-		}
+		},
+		onSelect: function(){
+			console.log('select');
+		},
+		footer: true,
+		draggable: false,
+		minDate: new Date()
 
-		/*footer: false*/
 	});
-
 
 
 	/*var picker2 = new Picker.Date.Range('range_hidden', {
