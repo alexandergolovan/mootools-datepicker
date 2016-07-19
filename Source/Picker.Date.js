@@ -336,6 +336,8 @@ this.DatePicker = Picker.Date = new Class({
 		this.setTitleEvent(titleEvent);
 
 		this.currentView = 'days';
+
+		this.fireEvent('afterRenderDays');
 	},
 
 	renderTime: function(date, fx){
