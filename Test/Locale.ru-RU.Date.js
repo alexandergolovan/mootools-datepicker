@@ -1,7 +1,7 @@
 /*
 ---
 
-name: Locale.nl-NL.Date
+name: Locale.ru-RU.Date
 
 description: Date messages for Dutch.
 
@@ -14,7 +14,7 @@ authors:
 requires:
   - /Locale
 
-provides: [Locale.nl-NL.Date]
+provides: [Locale.ru-RU.Date]
 
 ...
 */
@@ -36,32 +36,31 @@ Locale.define('ru-RU', 'Date', {
 	// Date.Extras
 	ordinal: 'e',
 
-	lessThanMinuteAgo: 'minder dan een minuut geleden',
-	minuteAgo: 'ongeveer een minuut geleden',
-	minutesAgo: '{delta} minuten geleden',
-	hourAgo: 'ongeveer een uur geleden',
-	hoursAgo: 'ongeveer {delta} uur geleden',
-	dayAgo: 'een dag geleden',
-	daysAgo: '{delta} dagen geleden',
-	weekAgo: 'een week geleden',
+	lessThanMinuteAgo: 'менее чем минуту назад',
+	minuteAgo: 'около минуты назад',
+	minutesAgo: '{delta} минут назад',
+	hourAgo: 'около часа назад',
+	hoursAgo: 'примерно {delta} часов назад',
+	dayAgo: 'один день назад',
+	daysAgo: '{delta} дней назад',
+	weekAgo: 'неделю назад',
 	weeksAgo: '{delta} weken geleden',
-	monthAgo: 'een maand geleden',
-	monthsAgo: '{delta} maanden geleden',
-	yearAgo: 'een jaar geleden',
-	yearsAgo: '{delta} jaar geleden',
+	monthAgo: 'недель назад',
+	monthsAgo: '{delta} месяцев назад',
+	yearAgo: 'год назад',
+	yearsAgo: '{delta} лет тому назад',
 
-	lessThanMinuteUntil: 'over minder dan een minuut',
-	minuteUntil: 'over ongeveer een minuut',
-	minutesUntil: 'over {delta} minuten',
-	hourUntil: 'over ongeveer een uur',
-	hoursUntil: 'over {delta} uur',
-	dayUntil: 'over ongeveer een dag',
-	daysUntil: 'over {delta} dagen',
-	weekUntil: 'over een week',
-	weeksUntil: 'over {delta} weken',
-	monthUntil: 'over een maand',
-	monthsUntil: 'over {delta} maanden',
-	yearUntil: 'over een jaar',
-	yearsUntil: 'over {delta} jaar'
-
+	lessThanMinuteUntil: 'менее чем за минуту',
+	minuteUntil: 'в течение примерно одной минуты',
+	minutesUntil: 'на {delta} минут',
+	hourUntil: 'в течение примерно часа',
+	hoursUntil: 'на {delta} часов',
+	dayUntil: 'в течение одного дня',
+	daysUntil: 'на {delta} дней',
+	weekUntil: 'около недели',
+	weeksUntil: 'на {delta} недель',
+	monthUntil: 'около месяца',
+	monthsUntil: 'на {delta} месяцев',
+	yearUntil: 'в течение года',
+	yearsUntil: 'на {delta} года'
 });

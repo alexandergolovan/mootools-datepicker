@@ -29,6 +29,8 @@ this.DatePicker = Picker.Date = new Class({
 		timePickerOnly: false, // deprecated, use onlyView = 'time'
 		timeWheelStep: 1, // 10,15,20,30
 
+		monthPicker: true,
+
 		yearPicker: true,
 		yearsPerPage: 20,
 
@@ -38,7 +40,7 @@ this.DatePicker = Picker.Date = new Class({
 		startView: 'days', // allowed values: {time, days, months, years}
 		openLastView: false,
 		pickOnly: 'days', // 'years', 'months', 'days', 'time'  (false by default)
-		canAlwaysGoUp: ['months', 'days'],
+		canAlwaysGoUp: ['days'],
 		updateAll : false, //whether or not to update all inputs when selecting a date
 
 		weeknumbers: false,
@@ -326,8 +328,9 @@ this.DatePicker = Picker.Date = new Class({
 			this.renderDays(date.increment('month', months), 'right');
 		}.bind(this));
 
-		var canGoUp = options.pickOnly != 'days' || options.canAlwaysGoUp.contains('days');
-		console.log('options: ', options);
+		/*Todo:refactor canGoUp*/
+		var canGoUp = options.monthPicker && (options.pickOnly != 'days' || options.canAlwaysGoUp.contains('days'));
+		console.log('canGoUp: ', canGoUp);
 		var titleEvent = (canGoUp) ? function(){
 			this.renderMonths(date, 'fade');
 		}.bind(this) : null;
